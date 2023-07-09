@@ -1,0 +1,4 @@
+Drag-and-drop the 'exe' file for your Windows desktop application into this folder.
+Then, edit the file path for "win32" in "osUtils.ts" to match the location of the app in this framework.
+
+If your Windows OS is different, switch out "win32" for your Windows OS name.

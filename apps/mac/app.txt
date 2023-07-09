@@ -1,0 +1,2 @@
+Drag-and-drop the desktop app icon from your Applications folder into this folder.
+Then, edit the file path for "darwin" in "osUtils.ts" to match the location of the app in this framework.

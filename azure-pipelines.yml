@@ -1,0 +1,31 @@
+trigger:
+- main
+
+# This will run the Windows app tests in Microsoft Azure
+# After the test run, it will publish the screenshot taken at the end of the test run
+# You can download this from the build artifacts published for the pipeline run
+jobs:
+  - job: Run_Playwright_Tests
+    pool:
+      vmImage: "windows-latest"
+    steps:
+      - task: Bash@3
+        displayName: Install Dependencies & Execute Playwright Tests
+        inputs:
+          targetType: 'inline'
+          script: |
+            # Show the variables before running tests
+            viewport_size="$(viewport_size)"
+            test_name="$(test_name)"
+            echo "VIEWPORT_SIZE=$viewport_size"
+            echo "TEST_NAME=$test_name"
+
+            npm install -g node-gyp
+            PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm ci
+            VIEWPORT_SIZE=$viewport_size npm test tests/$test_name
+      - task: PublishBuildArtifacts@1
+        condition: succeededOrFailed()
+        inputs:
+          PathtoPublish: './screenshots/'
+          ArtifactName: 'screenshots'
+          publishLocation: 'Container'
