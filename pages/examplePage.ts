@@ -1,4 +1,4 @@
-import BasePage from './page';
+import BasePage from './generics/page'
 import { Page } from '@playwright/test'
 
 export default class ExamplePage extends BasePage {

@@ -1,5 +1,5 @@
+import BaseSection from './generics/section';
 import { Locator } from '@playwright/test'
-import BaseSection from './section';
 
 export default class ExampleSection extends BaseSection {
     constructor(root: Locator) {
