@@ -42,7 +42,7 @@ export default class BasePage {
     return message
   }
 
-  messages(messages: string[]): string[] {
+  messages(messages: (string|string[])[]): (string|string[])[] {
     return messages
   }
 }
