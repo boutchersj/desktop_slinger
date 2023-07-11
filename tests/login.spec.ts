@@ -37,7 +37,7 @@ test.describe('Login', async () => {
     const blogPosts = await Example.blogPosts
     blogPosts.forEach(async (blogPost, idx) => {
       const BlogPost = new ExampleSection(blogPost)
-      await expect(BlogPost.author).toHaveText(BlogPost.authorMs[idx])
+      await expect(await BlogPost.author).toHaveText(BlogPost.authorMs[idx])
     })
   })
 })
