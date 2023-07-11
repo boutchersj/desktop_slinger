@@ -4,6 +4,7 @@ const util = testUtils()
 import { test, expect } from '@playwright/test'
 import type { Page, ElectronApplication, Locator } from 'playwright'
 import ExamplePage from '../pages/examplePage'
+import ExampleSection from '../pages/exampleSection'
 
 test.describe('Login', async () => {
   let app: ElectronApplication;
@@ -30,5 +31,13 @@ test.describe('Login', async () => {
     const title: Locator = await Example.title
 
     await expect(title).toHaveText(Example.titleM)
+  })
+
+  test('Sections all have authors', async () => {
+    const blogPosts = await Example.blogPosts
+    blogPosts.forEach(async (blogPost, idx) => {
+      const BlogPost = new ExampleSection(blogPost)
+      await expect(BlogPost.author).toHaveText(BlogPost.authorMs[idx])
+    })
   })
 })

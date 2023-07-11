@@ -7,7 +7,11 @@ export default class ExampleSection extends BaseSection {
     }
 
     // Messages
-    authorM = this.message('First Last')
+    authorMs = this.messages([
+        'Person One',
+        'Person Two',
+        'Person Three'
+    ])
 
     // Elements
     author = this.element('id', 'author_name')

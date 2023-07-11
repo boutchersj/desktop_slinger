@@ -11,4 +11,5 @@ export default class ExamplePage extends BasePage {
 
     // Elements
     title = this.element('id', 'page_title')
+    blogPosts = this.elements('id', 'container_element')
 }
