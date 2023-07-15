@@ -1,6 +1,6 @@
 import { Page, Locator } from '@playwright/test';
 import { LocatorStrategy } from '../../types';
-const { id, xpath, altText, text } = LocatorStrategy;
+const { id, xpath, altText, text, placeholder } = LocatorStrategy;
 
 export default class BaseGeneric {
   readonly base: Page | Locator;
@@ -18,6 +18,8 @@ export default class BaseGeneric {
         return this.base.getByAltText(selector)
       case text:
         return this.base.getByText(selector)
+      case placeholder:
+        return this.base.getByPlaceholder(selector)
       default:
         throw Error('Not a valid locator strategy')
     }
@@ -33,6 +35,8 @@ export default class BaseGeneric {
         return this.base.getByAltText(selector).all()
       case text:
         return this.base.getByText(selector).all()
+      case placeholder:
+        return this.base.getByPlaceholder(selector).all()
       default:
         throw Error('Not a valid locator strategy')
     }

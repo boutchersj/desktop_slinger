@@ -1,8 +1,8 @@
 require('dotenv').config()
 import { ViewportSize } from './types'
 
-const minResolution: ViewportSize = { width: 800, height: 600 }
-const maxResolution: ViewportSize = { width: 1920, height: 1080 }
+const minResolution: ViewportSize = { width: 1920, height: 1080 }
+const maxResolution: ViewportSize = { width: 2560, height: 1664 }
 
 function determineViewportSize(): ViewportSize {
     if (!process.env.VIEWPORT_SIZE) return minResolution

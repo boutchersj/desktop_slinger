@@ -1,0 +1,6 @@
+apps/mac/
+apps/win/
+test-results/
+screenshots/
+node_modules/
+.env

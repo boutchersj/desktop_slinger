@@ -12,9 +12,9 @@ const config: PlaywrightTestConfig = {
   retries: 0,
   workers: 1,
   expect: {
-    timeout: 30 * 1000,
+    timeout: 10 * 1000,
   },
-  timeout: 30 * 1000,
+  timeout: 10 * 1000,
   reporter: [
     ['list'],
     ['junit', { outputFile: `test-results/test-results-${new Date().toISOString().replace(/:/g,'_')}.xml` }]

@@ -38,3 +38,7 @@ exports.getWindow = async (app: ElectronApplication) => {
     await appWindow.setViewportSize(viewportSize)
     return appWindow
 }
+
+module.exports = function appUtils() {
+    return { ...exports }
+}

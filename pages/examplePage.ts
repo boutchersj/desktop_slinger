@@ -7,9 +7,12 @@ export default class ExamplePage extends BasePage {
     }
 
     // Messages
-    titleM = this.message('Welcome to the App')
+    searchM = this.message('Search')
 
     // Elements
-    title = this.element('id', 'page_title')
-    blogPosts = this.elements('id', 'container_element')
+    search = this.element('text', 'Search')
+    searchBar = this.element('placeholder', "Search Steven Boutcher's Notion")
+    searchResults = this.element('text', '9+ results')
+
+    // blogPosts = this.elements('id', 'container_element')
 }

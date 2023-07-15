@@ -3,7 +3,8 @@ export enum LocatorStrategy {
     xpath = 'xpath',
     role = 'role',
     altText = 'altText',
-    text = 'text'
+    text = 'text',
+    placeholder = 'placeholder'
 }
 
 export type CustomLogin = {
