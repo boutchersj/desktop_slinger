@@ -6,8 +6,8 @@ Automate tests for your Electron apps using Playwright & TypeScript!
 
 ## GitHub Repo
 
-<a href="https://github.com/steven-the-qa/native-automation-template" target="_blank" rel='noopener noreferrer'>
-    https://github.com/steven-the-qa/native-automation-template
+<a href="https://github.com/steven-the-qa/electron-automation-template" target="_blank" rel='noopener noreferrer'>
+    https://github.com/steven-the-qa/electron-automation-template
 </a>
 
 ## Tech Stack
